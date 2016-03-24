@@ -22,13 +22,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Stefan Strek", "", "")</li>@**@
                     <li>@Html.ActionLink("Donate", "", "")</li>
                     <li>@Html.ActionLink("On The Issues", "", "")</li>@*These are all empty so they don't link anywhere*@
                     <li>@Html.ActionLink("In The News", "", "")</li>@*Need to do donation page*@
                     <li>@Html.ActionLink("Calendar", "", "")</li>
                     <li>@Html.ActionLink("Volunteer", "", "")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>
@@ -36,7 +37,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; Paid for by Thoughful Locals for Strong Communities</p>@* Maybe this looks good?*@
         </footer>
     </div>
 
