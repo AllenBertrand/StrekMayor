@@ -6,38 +6,58 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <style>
+        #navbar {
+            background: white url(@Url.Content("~/Pictures/Flag.JPG"));
+	        background-size: cover;
+	        border-radius: 60px;
+	        border: 1px solid #808080;
+	        box-shadow: 10px 10px 5px rgba(0,0,0,0.7);    
+	        height: 6vh;
+	        left: 2%;
+	        top: 2%;
+	        position: fixed;
+	        width: 96vw;
+        }
+        #navbar a {
+            color: black;
+            font-size: 150%;
+            font-weight: bold;
+        }
+        .navlink {
+            float: left;
+            height: 100%;
+            line-height: 6vh;
+            text-align: center;
+            vertical-align: middle;
+            width: 24%;
+        }
+        .border-right {
+            border-right: 0.10vw solid black;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @*@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Stefan Strek", "", "")</li>@**@
-                    <li>@Html.ActionLink("Donate", "", "")</li>
-                    <li>@Html.ActionLink("On The Issues", "", "")</li>@*These are all empty so they don't link anywhere*@
-                    <li>@Html.ActionLink("In The News", "", "")</li>@*Need to do donation page*@
-                    <li>@Html.ActionLink("Calendar", "", "")</li>
-                    <li>@Html.ActionLink("Volunteer", "", "")</li>
-                </ul>
-                @*@Html.Partial("_LoginPartial")*@
-            </div>
+    <div id="navbar">
+        <div class="navlink border-right">
+            @Html.ActionLink("On The Issues", "Index", "Home")
+        </div>
+        <div class="navlink border-right">
+            @Html.ActionLink("In The News", "Index", "Home")
+        </div>
+        <div class="navlink border-right">
+            @Html.ActionLink("Q & A", "Index", "Home")
+        </div>
+        <div class="navlink">
+            @Html.ActionLink("Events", "Index", "Home")
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; Paid for by Thoughful Locals for Strong Communities</p>@* Maybe this looks good?*@
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
